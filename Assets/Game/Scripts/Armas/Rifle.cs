@@ -27,7 +27,7 @@ public class Rifle : Armas
         municionActual = 0;
         estaRecargando = true;
 
-        if (GameManager.instance.balasHandGun <= 0) yield break;
+        if (GameManager.Instance.balasHandGun <= 0) yield break;
         UiManager.instance.textoBalas.text = "Recargando";
 
         AudioManager.instance.Play("RecargarPistola");
@@ -35,8 +35,8 @@ public class Rifle : Armas
         yield return new WaitForSeconds(tiempoRecarga);
         UiManager.instance.textoBalas.text = municionActual + "/" + municionMax;
 
-        int municionQueRecargar = GameManager.instance.balasHandGun >= municionMax ? municionMax : GameManager.instance.balasHandGun;
-        GameManager.instance.balasHandGun -= municionQueRecargar;
+        int municionQueRecargar = GameManager.Instance.balasHandGun >= municionMax ? municionMax : GameManager.Instance.balasHandGun;
+        GameManager.Instance.balasHandGun -= municionQueRecargar;
         municionActual = municionQueRecargar;
         estaRecargando = false;
         AudioManager.instance.Stop("RecargarPistola");

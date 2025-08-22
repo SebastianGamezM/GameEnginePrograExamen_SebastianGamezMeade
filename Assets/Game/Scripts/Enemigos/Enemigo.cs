@@ -78,7 +78,9 @@ public class Enemigo : MonoBehaviour
     private IEnumerator DetenerMeshDaño(float tiempo)
     {
         agent.isStopped = true;
+        agent.SetDestination(transform.position);
         yield return new WaitForSeconds(tiempo);
+        PerseguirJugador();
         agent.isStopped = false;
     }
 
@@ -87,7 +89,7 @@ public class Enemigo : MonoBehaviour
     {
         agent.isStopped = true;
         animator.SetTrigger("Die");
-
+        agent.SetDestination(transform.position);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         Destroy(gameObject);

@@ -16,15 +16,15 @@ public class RecogerBalas : MonoBehaviour
         switch (tipoDeBala)
         {
             case TipoBala.handGun:
-                GameManager.instance.balasHandGun += balasQueDa;
+                GameManager.Instance.balasHandGun += balasQueDa;
                 break;
 
             case TipoBala.rifle:
-                GameManager.instance.balasRifle += balasQueDa;
+                GameManager.Instance.balasRifle += balasQueDa;
                 break;
 
-            case TipoBala.shotGun:
-                GameManager.instance.balasEscopeta += balasQueDa;
+            case TipoBala.shotGun:  
+                GameManager.Instance.balasEscopeta += balasQueDa;
                 break;
         }
     }
