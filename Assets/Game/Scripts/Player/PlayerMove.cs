@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        if (controller != null && controller.enabled) 
+        if (controller != null && controller.enabled && !GameManager.Instance.bloquearInputs) 
         {
             Movimiento();
             Gravedad();

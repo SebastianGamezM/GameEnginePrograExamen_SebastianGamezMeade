@@ -35,6 +35,7 @@ public class RecogerBalas : MonoBehaviour
         {           
             DarBalas();
             AudioManager.instance.Play("DarBalas");
+            GameManager.Instance.objetosEliminados.Add(name);
             Destroy(gameObject);
         }
     }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,17 +13,19 @@ public class GameManager : MonoBehaviour
 
     public float posX, posY, posZ;
     private PerfilJugador perfilJugador;
+
+    public List<string> objetosEliminados = new List<string>();
+
+    public bool bloquearInputs;
+
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        GuardarPartida();
     }
 
     public void GuardarPartida()
@@ -59,8 +62,23 @@ public class GameManager : MonoBehaviour
             player.GetComponent<CharacterController>().enabled = false;
             player.transform.position = new Vector3(posX, posY, posZ);
             player.GetComponent<CharacterController>().enabled = true;
+
+            objetosEliminados = perfilJugador.objetosEliminados;
+            EliminarObjetosEliminados();    
+
+            UiManager.instance.pantallaDerrota.SetActive(false);
+            UiManager.instance.pantallaVictoria.SetActive(false);
         }
 
+    }
+
+    private void EliminarObjetosEliminados()
+    {
+        for (int i = 0; i < objetosEliminados.Count; i++) 
+        {
+            GameObject objeto = GameObject.Find(objetosEliminados[i]);
+            Destroy(objeto);
+        }
     }
 
     private void RecuperarArmas()

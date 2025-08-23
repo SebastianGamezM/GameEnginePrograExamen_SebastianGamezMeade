@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
 public class RecogerArma : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RecogerArma : MonoBehaviour
             InventarioArmas inventario = FindAnyObjectByType<InventarioArmas>();
             inventario.RecogerArma(armaQueDa);
             AudioManager.instance.Play("RecogerArma");
+            GameManager.Instance.objetosEliminados.Add(name);
             Destroy(gameObject);
         }
     }

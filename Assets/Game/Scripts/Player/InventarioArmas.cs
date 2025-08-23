@@ -11,6 +11,8 @@ public class InventarioArmas : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.bloquearInputs) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && armasObtenidas[0] != null) EquiparArma(0);
         if (Input.GetKeyDown(KeyCode.Alpha2) && armasObtenidas[1] != null) EquiparArma(1);
         if (Input.GetKeyDown(KeyCode.Alpha3) && armasObtenidas[2] != null) EquiparArma(2);
@@ -32,12 +34,7 @@ public class InventarioArmas : MonoBehaviour
         {
             if (armasObtenidas[i] == null)
             {
-                GameObject armaClon = Instantiate(
-                    armaPrefab,
-                    spawnArma.position,
-                    spawnArma.rotation,
-                    spawnArma
-                );
+                GameObject armaClon = Instantiate( armaPrefab,spawnArma.position,spawnArma.rotation,spawnArma);
                 armaClon.SetActive(false);
 
                 armasObtenidas[i] = armaClon;

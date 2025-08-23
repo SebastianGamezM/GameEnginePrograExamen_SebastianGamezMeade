@@ -12,6 +12,15 @@ public class EstacionGuardado : MonoBehaviour
         {
             GuardarPartida();
         }
+        if(PlayerDentro() && !enCooldown)
+        {
+            UiManager.instance.guardarPartidaTexto.text = "Presiona \"E\" para guardar la partida";
+        }
+        else if(!enCooldown) 
+        {
+            UiManager.instance.guardarPartidaTexto.text = "";
+        }
+ 
     }
 
     private void GuardarPartida()
@@ -35,7 +44,10 @@ public class EstacionGuardado : MonoBehaviour
     private IEnumerator GuardadoVisual()
     {
         enCooldown = true;
+        UiManager.instance.guardarPartidaTexto.text = "Guardando partida...";
         yield return new WaitForSeconds(2);
+        UiManager.instance.guardarPartidaTexto.text = "Partida guardada";
+        yield return new WaitForSeconds(1);
         enCooldown = false;
     }
 

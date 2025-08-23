@@ -91,13 +91,18 @@ public class Enemigo : MonoBehaviour
         animator.SetTrigger("Die");
         agent.SetDestination(transform.position);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-
+        GameManager.Instance.objetosEliminados.Add(name);
         Destroy(gameObject);
     }
     private void DañarPlayer()
     {
-        //player.position = new Vector3(999, 999, 999);
-        //StartCoroutine(GameManager.instance.Derrota());
+        GameManager.Instance.bloquearInputs = true;
+        player.GetComponent<CharacterController>().enabled = false;
+        player.transform.position = new Vector3(999, 999, 999);
+        player.GetComponent<CharacterController>().enabled = true;
+        UiManager.instance.pantallaDerrota.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void OnDrawGizmos()

@@ -8,22 +8,21 @@ public class UiManager : MonoBehaviour
 
     public TextMeshProUGUI textoBalas;
     public Image imagenArma;
+    public TextMeshProUGUI guardarPartidaTexto;
+    public GameObject pantallaDerrota;
+    public GameObject pantallaVictoria;
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance = this;
     }
+
 
     private void Start()
     {
+        pantallaDerrota.SetActive(false);
+        pantallaVictoria.SetActive(false);
         imagenArma.sprite = null;
         textoBalas.text = "";
+        guardarPartidaTexto.text = "";
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,6 +12,7 @@ public class PerfilJugador
 
     public string[] armasObtenidas = new string[3];
 
+    public List<string> objetosEliminados = new List<string>();
     public PerfilJugador()
     {
         balasHandGun = GameManager.Instance.balasHandGun;
@@ -23,5 +25,7 @@ public class PerfilJugador
         posX = GameManager.Instance.posX;
         posY = GameManager.Instance.posY;
         posZ = GameManager.Instance.posZ;
+
+        objetosEliminados = GameManager.Instance.objetosEliminados;
     }
 }

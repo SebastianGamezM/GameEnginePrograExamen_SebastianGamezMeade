@@ -35,7 +35,7 @@ public class Pistola : Armas
         }
         UiManager.instance.textoBalas.text = "Recargando";
 
-        AudioManager.instance.Play("RecargarPistola");
+        AudioManager.instance.Play("RecargaPistola");
 
         yield return new WaitForSeconds(tiempoRecarga);
 
@@ -43,7 +43,7 @@ public class Pistola : Armas
         GameManager.Instance.balasHandGun -= municionQueRecargar;
         municionActual = municionQueRecargar;
         estaRecargando = false;
-        AudioManager.instance.Stop("RecargarPistola");
+        AudioManager.instance.Stop("RecargaPistola");
         UiManager.instance.textoBalas.text = municionActual + "/" + municionMax;
     }
 

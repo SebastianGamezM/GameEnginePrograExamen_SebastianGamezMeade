@@ -21,7 +21,6 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
         padre = transform.parent;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
