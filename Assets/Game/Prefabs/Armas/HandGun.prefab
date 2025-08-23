@@ -154,8 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff70fb8b2f8189478e7ab998d203140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: handgun
   municionMax: 15
-  municionActual: 15
+  municionActual: 14
   tiempoRecarga: 3
   fireRate: 1
   "da\xF1o": 10

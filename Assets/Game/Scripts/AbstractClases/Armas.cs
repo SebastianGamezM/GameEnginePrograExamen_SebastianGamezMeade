@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
+
 public abstract class Armas : MonoBehaviour
 {
+    public string id;
+
     [Header("Stats")]
     public int municionMax;
     public int municionActual;

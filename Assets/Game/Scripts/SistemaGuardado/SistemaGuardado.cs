@@ -17,6 +17,8 @@ public static class SistemaGuardado
         formatter.Serialize(stream, perfil);
 
         stream.Close();
+
+        Debug.Log("Partida guardada en " + path);
     }
 
     public static PerfilJugador CargarPartida()
@@ -25,17 +27,15 @@ public static class SistemaGuardado
 
         if (File.Exists(path))
         {
-            // Se crea un flujo de informacion con la direccion y accion
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            // Creamos una variable de formateo binario
             BinaryFormatter formatter = new BinaryFormatter();
 
-            // Descomprimir archivo
             PerfilJugador perfil = formatter.Deserialize(stream) as PerfilJugador;
 
-            // Se cierra el flujo de la informacion
             stream.Close();
+
+            Debug.Log("Partida cargada " + path);
 
             return perfil;
         }

@@ -5,16 +5,23 @@ public class PerfilJugador
 {
     public int balasHandGun, balasEscopeta, balasRifle;
 
-    public Vector3 posicionPlayer;
+    public float posX, posY, posZ;
 
     public string nivel;
+
+    public string[] armasObtenidas = new string[3];
 
     public PerfilJugador()
     {
         balasHandGun = GameManager.Instance.balasHandGun;
-        balasHandGun = GameManager.Instance.balasEscopeta;
-        balasHandGun = GameManager.Instance.balasRifle;
+        balasEscopeta = GameManager.Instance.balasEscopeta;
+        balasRifle = GameManager.Instance.balasRifle;
 
-        posicionPlayer = GameManager.Instance.posicionPlayer;
+
+        armasObtenidas = GameManager.Instance.armasObtenidasID;
+
+        posX = GameManager.Instance.posX;
+        posY = GameManager.Instance.posY;
+        posZ = GameManager.Instance.posZ;
     }
 }

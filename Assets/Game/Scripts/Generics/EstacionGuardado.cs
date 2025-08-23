@@ -16,12 +16,20 @@ public class EstacionGuardado : MonoBehaviour
 
     private void GuardarPartida()
     {
-        GameManager.Instance.SalvarDatos();
+        GameManager.Instance.GuardarPartida();
+        StartCoroutine(GuardadoVisual());
     }
     private bool PlayerDentro()
     {
         Collider[] colisiones = Physics.OverlapBox(gameObject.transform.position, new Vector3(radio, radio, radio), Quaternion.identity, playerLayer);
-        return colisiones[0].CompareTag("Player");
+
+        foreach (Collider col in colisiones)
+        {
+            if (col.CompareTag("Player"))
+                return true;
+        }
+
+        return false;
     }
 
     private IEnumerator GuardadoVisual()

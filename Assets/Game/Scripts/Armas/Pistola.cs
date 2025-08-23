@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Pistola : Armas
 {
-
     private void Start()
     {
         municionActual = municionMax;

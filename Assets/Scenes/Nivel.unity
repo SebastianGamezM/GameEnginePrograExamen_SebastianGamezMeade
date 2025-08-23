@@ -1180,8 +1180,25 @@ MonoBehaviour:
   balasHandGun: 15
   balasEscopeta: 10
   balasRifle: 40
-  posicionPlayer: {x: 0, y: 0, z: 0}
-  nombreGuardado: 
+  nombreGuardado: Save1
+  armasObtenidas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  armasObtenidasID:
+  - 
+  - 
+  - 
+  armasID:
+  - prefab: {fileID: 8384469586637751801, guid: 4a7547af71d4b6b479693d0acf00ed02, type: 3}
+    ID: handgun
+  - prefab: {fileID: 8384469586637751801, guid: 355144f9168ccb84696c138f276b565b, type: 3}
+    ID: rifle
+  - prefab: {fileID: 8384469586637751801, guid: 355144f9168ccb84696c138f276b565b, type: 3}
+    ID: rifle
+  posX: 0
+  posY: 0
+  posZ: 0
 --- !u!4 &732704923
 Transform:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ public class RecogerArma : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            FindAnyObjectByType<InventarioArmas>().RecogerArma(armaQueDa);
+            InventarioArmas inventario = FindAnyObjectByType<InventarioArmas>();
+            inventario.RecogerArma(armaQueDa);
             AudioManager.instance.Play("RecogerArma");
             Destroy(gameObject);
         }

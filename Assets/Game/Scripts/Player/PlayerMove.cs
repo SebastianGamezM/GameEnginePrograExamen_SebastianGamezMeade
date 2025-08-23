@@ -31,8 +31,16 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        Movimiento();
-        Gravedad();
+        if (controller != null && controller.enabled) 
+        {
+            Movimiento();
+            Gravedad();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F9)) 
+        {
+            GameManager.Instance.CargarGuardado("Save1");
+        }
     }
 
     private void Movimiento()

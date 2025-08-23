@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2826859291241831167
 Transform:
   m_ObjectHideFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff70fb8b2f8189478e7ab998d203140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: rifle
   municionMax: 30
   municionActual: 30
   tiempoRecarga: 4

@@ -8,6 +8,7 @@ public class InventarioArmas : MonoBehaviour
 
     private Armas armaEquipada;
 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && armasObtenidas[0] != null) EquiparArma(0);
